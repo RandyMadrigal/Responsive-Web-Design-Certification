@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="title">FreeCodeCamp Survey Form</h1>
+    <p id="description">
+      Thank you for taking the time to help us improve the platform
+    </p>
+
+    <form id="survey-form">
+      <fieldset>
+        <label for="name-label" id="name-label"
+          >Name<input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            required
+        /></label>
+
+        <label for="email-label" id="email-label"
+          >Email<input
+            type="email"
+            id="email"
+            placeholder="Enter your Email"
+            required
+        /></label>
+
+        <label for="number-label" id="number-label"
+          >Age<input
+            type="number"
+            min="5"
+            max="100"
+            id="number"
+            placeholder="Age"
+            required
+        /></label>
+      </fieldset>
+
+      <fieldset>
+        <p>Which Option best describes your current role?</p>
+
+        <select name="dropdown" id="dropdown">
+          <option value="">Select current role</option>
+          <option value="1">Student</option>
+          <option value="2">Full time job</option>
+          <option value="3">prefer not to say</option>
+          <option value="4">Other</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <p>Would you recommend freeCodeCamp to a friend?</p>
+
+        <label for="definitely-radio"
+          ><input
+            id="definitely-radio"
+            type="radio"
+            name="input-radio"
+            class="inline"
+            value="definitely"
+            checked
+          />Definitely</label
+        >
+        <label for="maybe-radio"
+          ><input
+            type="radio"
+            id="maybe-radio"
+            name="input-radio"
+            value="maybe"
+            class="inline"
+          />Maybe</label
+        >
+        <label for="not-sure-radio"
+          ><input
+            type="radio"
+            id="not-sure-radio"
+            name="input-radio"
+            value="not-sure"
+            class="inline"
+          />Not sure</label
+        >
+      </fieldset>
+
+      <fieldset>
+        <p>What would you like to see improved? (Check all that apply)</p>
+
+        <label for="FrontEnd"
+          ><input
+            type="checkbox"
+            class="inline"
+            name="FrontEnd"
+            id="FrontEnd"
+            value="FrontEnd"
+          />FrontEnd</label
+        >
+        <label for="BackEnd"
+          ><input
+            type="checkbox"
+            class="inline"
+            name="BackEnd"
+            id="BackEnd"
+            value="BackEnd"
+          />BackEnd</label
+        >
+        <label for="Data-Visualization"
+          ><input
+            type="checkbox"
+            class="inline"
+            name="Data-Visualization"
+            id="Data-Visualization"
+            value="Data-Visualization"
+          />Data Visualization</label
+        >
+        <label for="Challenges"
+          ><input
+            type="checkbox"
+            class="inline"
+            name="Challenges"
+            id="Challenges"
+            value="Challenges"
+          />Challenges</label
+        >
+        <label for="Open-Source-community"
+          ><input
+            type="checkbox"
+            class="inline"
+            name="Open-Source-community"
+            id="Open-Source-community"
+            value="Open-Source-community"
+          />Open Source community</label
+        >
+        <label for="Gitter-help-room"
+          ><input
+            type="checkbox"
+            class="inline"
+            name="Gitter-help-room"
+            id="Gitter-help-room"
+            value="Gitter-help-room"
+          />Gitter help room</label
+        >
+        <label for="Forum"
+          ><input
+            type="checkbox"
+            class="inline"
+            name="Forum"
+            id="Forum"
+            value="Forum"
+          />Forum</label
+        >
+        <label for="Additional-Courses"
+          ><input
+            type="checkbox"
+            class="inline"
+            name="Additional-Courses"
+            id="Additional-Courses"
+            value="Additional-Courses"
+          />Additional Courses</label
+        >
+      </fieldset>
+
+      <fieldset>
+        <p>Any comments or suggestions?</p>
+        <textarea
+          name="comments"
+          id="comments"
+          cols="60"
+          rows="5"
+          placeholder="Enter your comments here..."
+        ></textarea>
+      </fieldset>
+
+      <input type="submit" value="Submit" id="submit" />
+    </form>
+  </body>
+</html>
