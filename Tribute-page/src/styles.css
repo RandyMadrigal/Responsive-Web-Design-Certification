@@ -1,0 +1,106 @@
+body {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  font-family: tahoma, san-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: #e0e0e0;
+}
+
+#title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-weight: bold;
+}
+
+h1 {
+  margin-bottom: -10px;
+}
+
+#img-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  margin: 0 20px;
+  border: 2px solid #000000;
+}
+
+figure img {
+  object-fit: contain;
+  width: 600px;
+  height: auto;
+}
+
+#tribute-info {
+  margin-top: 5px;
+}
+
+section #info-section {
+  justify-content: center;
+}
+
+#info-section {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-top: 40px;
+}
+
+.card {
+  box-shadow: 0 1px 10px 0;
+  transition: 0.3s;
+  border-radius: 5px 5px 0 0;
+  padding: 5px 0 0 16px;
+  max-height: 200px;
+  width: 300px;
+  margin: 15px 10px;
+  background-color: #ffffff;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0;
+}
+
+.container {
+  padding-bottom: 5px;
+}
+
+#moreInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  font-weight: bold;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+footer {
+  margin-top: 50px;
+  color: #000000;
+  background-color: #a0a0a0;
+  border-top: 2px solid #000000;
+}
+
+footer div {
+  display: flex;
+  justify-content: right;
+  margin: 0 20px;
+}
+
+section h3 {
+  text-align: center;
+  margin-bottom: -25px;
+}
