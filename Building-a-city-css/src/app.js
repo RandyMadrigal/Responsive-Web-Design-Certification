@@ -3,9 +3,6 @@ Si la hora contiene PM cambiar a modo noche,
 en caso contrario modo dia.
 */
 
-const date = new Date();
-let time = date.toLocaleTimeString();
-
 //propiedades :root
 let properties = {
   "--building-color1": "#000",
@@ -20,8 +17,6 @@ let properties = {
 
 //propiedades .sky
 let sky = document.querySelector(".sky");
-
-//aplicar propiedades
 
 function setSkyStyle(prop) {
   prop.style.setProperty(
@@ -40,10 +35,19 @@ function setRootStyle(property) {
 }
 
 function getTime() {
-  if (time.includes("PM")) {
+  let date = new Date();
+  let time = date.toLocaleTimeString("en-US");
+
+  if (time.includes("PM") && date.getHours() >= 18) {
     setSkyStyle(sky);
     setRootStyle(properties);
   }
+
+  if (time.includes("AM") && date.getHours() <= 7) {
+    setSkyStyle(sky);
+    setRootStyle(properties);
+  }
+
   console.log(time);
 }
 
@@ -51,4 +55,4 @@ getTime();
 
 setInterval(() => {
   getTime();
-}, 1800000);
+}, 300000);
