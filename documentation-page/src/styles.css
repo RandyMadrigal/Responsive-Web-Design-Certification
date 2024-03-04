@@ -66,13 +66,17 @@ section > article {
   text-align: justify;
 }
 
-code {
+code,
+pre {
   color: #555;
   font-size: 14px;
   padding: 10px;
   border-radius: 3px;
   overflow: auto;
   border: 2px solid #ddd;
+}
+
+pre {
 }
 
 article > p {
