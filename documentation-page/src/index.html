@@ -10,44 +10,44 @@
     <div class="grid-container">
       <div class="columns">
         <nav>
-          <h3>Getting started</h3>
+          <h3 id="#title"><a href="">Express</a></h3>
+          <h3><a href="#Getting-started">Getting started</a></h3>
           <ul>
-            <li>Installing</li>
-            <li>Hello World</li>
-            <li>Basic routing</li>
-            <li>Static files</li>
+            <li><a href="#Installing">Installing</a></li>
+            <li><a href="#Hello-World">Hello World</a></li>
+            <li><a href="#Basic-routing">Basic routing</a></li>
           </ul>
 
-          <h3>Guide</h3>
+          <h3><a href="#Guide">Guide</a></h3>
           <ul>
-            <li>Routing</li>
-            <li>Writing middleware</li>
-            <li>Using middleware</li>
-            <li>Using template engines</li>
-            <li>Error handling</li>
+            <li><a href="#Routing">Routing</a></li>
+            <li><a href="#Writing-middleware">Writing middleware</a></li>
+            <li>
+              <a href="#Using-template-engines">Using template engines</a>
+            </li>
+            <li><a href="#Error-handling">Error handling</a></li>
           </ul>
 
-          <h3>Advanced topics</h3>
+          <h3><a href="#Advanced-topics">Advanced topics</a></h3>
           <ul>
-            <li>Template engines</li>
-            <li>Process managers</li>
-            <li>Security updates</li>
-            <li>Security best practices</li>
-            <li>Performance best practices</li>
-          </ul>
-
-          <h3>Resources</h3>
-          <ul>
-            <li>Glossary</li>
-            <li>Template Engines</li>
-            <li>Middleware</li>
-            <li>Utility modules</li>
-            <li>Frameworks</li>
+            <li><a href="#Template-engines">Template engines</a></li>
+            <li><a href="#Process-managers">Process managers</a></li>
+            <li>
+              <a href="#Security-best-practices">Security best practices</a>
+            </li>
+            <li>
+              <a href="#Performance-best-practices"
+                >Performance best practices</a
+              >
+            </li>
           </ul>
 
           <h3>For more information</h3>
           <ul>
-            <li>visit the official website <span>Expressjs</span></li>
+            <li>
+              visit the official website
+              <a href="https://expressjs.com/" target="_blank">Expressjs</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -55,7 +55,7 @@
       <div class="columns">
         <header>
           <div>
-            <h1>Express</h1>
+            <h1 id="title">Express</h1>
           </div>
           <div>
             <p>
@@ -69,9 +69,9 @@
         </header>
 
         <main>
-          <header class="title">Getting started</header>
+          <header id="Getting-started" class="title">Getting started</header>
           <section>
-            <header>Installing</header>
+            <header id="Installing">Installing</header>
             <article>
               <p>
                 Assuming you've already installed Node.js, create a directory to
@@ -110,7 +110,7 @@
             </article>
           </section>
           <section>
-            <header>Hello World</header>
+            <header id="Hello-World">Hello World</header>
             <article>
               <pre>
                 const express = require('express')
@@ -126,97 +126,332 @@
                 })
               </pre>
               <p>
-                This app starts a server and listens on port 3000 for
-                connections. The app responds with “Hello World!” for requests
-                to the root URL (/) or route. For every other path, it will
-                respond with a 404 Not Found.
-              </p>
-              <p>
-                The example above is actually a working server: Go ahead and
-                click on the URL shown. You'll get a response, with real-time
-                logs on the page, and any changes you make will be reflected in
-                real time. This is powered by RunKit, which provides an
-                interactive JavaScript playground connected to a complete Node
-                environment that runs in your web browser. Below are
-                instructions for running the same app on your local machine.
+                <strong>Running Locally</strong>: First create a directory named
+                myapp, change to it and run npm init. Then install express as a
+                dependency, as per the installation guide. In the myapp
+                directory, create a file named app.js and copy in the code from
+                the example above.
               </p>
             </article>
           </section>
           <section>
-            <header>Basic routing</header>
-            <article></article>
+            <header id="Basic-routing">Basic routing</header>
+            <article>
+              <p>
+                Routing refers to determining how an application responds to a
+                client request to a particular endpoint, which is a URI (or
+                path) and a specific HTTP request method (GET, POST, and so on).
+              </p>
+              <p>
+                Each route can have one or more handler functions, which are
+                executed when the route is matched.
+              </p>
+              <p>Route definition takes the following structure:</p>
+              <code>app.METHOD(PATH, HANDLER)</code>
+              <p>where:</p>
+              <ul>
+                <li>app is an instance of express.</li>
+                <li>METHOD is an HTTP request method, in lowercase.</li>
+                <li>PATH is a path on the server.</li>
+                <li>
+                  HANDLER is the function executed when the route is matched.
+                </li>
+              </ul>
+
+              <pre>
+              //The following examples illustrate defining simple routes.
+                app.get('/', (req, res) => {
+                  res.send('Hello World!')
+                })
+              
+                //Respond to POST request on the root route (/), the application's home page:
+                
+                app.post('/', (req, res) => {
+                  res.send('Got a POST request')
+                })
+              
+                //Respond to a PUT request to the /user route:
+                
+                app.put('/user', (req, res) => {
+                  res.send('Got a PUT request at /user')
+                })
+              
+                //Respond to a DELETE request to the /user route:
+                
+                app.delete('/user', (req, res) => {
+                  res.send('Got a DELETE request at /user')
+                })
+              </pre>
+            </article>
+          </section>
+
+          <header id="Guide" class="title">Guide</header>
+          <section>
+            <header id="Routing">Routing</header>
+            <article>
+              <p>
+                Routing refers to how an application's endpoints (URIs) respond
+                to client requests. For an introduction to routing, see Basic
+                routing.
+              </p>
+              <p>
+                You define routing using methods of the Express app object that
+                correspond to HTTP methods; for example, app.get() to handle GET
+                requests and app.post to handle POST requests. For a full list,
+                see app.METHOD. You can also use app.all() to handle all HTTP
+                methods and app.use() to specify middleware as the callback
+                function (See Using middleware for details).
+              </p>
+              <p>
+                These routing methods specify a callback function (sometimes
+                called “handler functions”) called when the application receives
+                a request to the specified route (endpoint) and HTTP method. In
+                other words, the application “listens” for requests that match
+                the specified route(s) and method(s), and when it detects a
+                match, it calls the specified callback function.
+              </p>
+              <p>
+                In fact, the routing methods can have more than one callback
+                function as arguments. With multiple callback functions, it is
+                important to provide next as an argument to the callback
+                function and then call next() within the body of the function to
+                hand off control to the next callback.
+              </p>
+            </article>
           </section>
           <section>
-            <header>Static files</header>
-            <article></article>
-          </section>
-          <header class="title">Guide</header>
-          <section>
-            <header>Routing</header>
-            <article></article>
-          </section>
-          <section>
-            <header>Writing middleware</header>
-            <article></article>
-          </section>
-          <section>
-            <header>Using middleware</header>
-            <article></article>
-          </section>
-          <section>
-            <header>Using template engines</header>
-            <article></article>
-          </section>
-          <section>
-            <header>Error handling</header>
-            <article></article>
-          </section>
-          <header class="title">Advanced topics</header>
-          <section>
-            <header>Template engines</header>
-            <article></article>
+            <header id="Writing-middleware">Writing middleware</header>
+            <article>
+              <p>
+                Middleware functions are functions that have access to the
+                request object (req), the response object (res), and the next
+                function in the application's request-response cycle. The next
+                function is a function in the Express router which, when
+                invoked, executes the middleware succeeding the current
+                middleware.
+              </p>
+              <ul>
+                <p>Middleware functions can perform the following tasks:</p>
+                <li>Execute any code.</li>
+                <li>Make changes to the request and the response objects.</li>
+                <li>End the request-response cycle.</li>
+                <li>Call the next middleware in the stack.</li>
+              </ul>
+              <p>
+                If the current middleware function does not end the
+                request-response cycle, it must call next() to pass control to
+                the next middleware function. Otherwise, the request will be
+                left hanging.
+              </p>
+            </article>
           </section>
           <section>
-            <header>Process managers</header>
-            <article></article>
+            <header id="Using-template-engines">Using template engines</header>
+            <article>
+              <p>
+                A template engine enables you to use static template files in
+                your application. At runtime, the template engine replaces
+                variables in a template file with actual values, and transforms
+                the template into an HTML file sent to the client. This approach
+                makes it easier to design an HTML page.
+              </p>
+              <p>
+                Some popular template engines that work with Express are Pug,
+                Mustache, and EJS. The Express application generator uses Jade
+                as its default, but it also supports several others.
+              </p>
+            </article>
           </section>
           <section>
-            <header>Security updates</header>
-            <article></article>
+            <header id="Error handling">Error handling</header>
+            <article>
+              <p>
+                Errors that occur in synchronous code inside route handlers and
+                middleware require no extra work. If synchronous code throws an
+                error, then Express will catch and process it. For example:
+              </p>
+              <pre>
+                app.get('/', (req, res) => {
+                  throw new Error('BROKEN') // Express will catch this on its own.
+                })
+              </pre>
+              <p>
+                For errors returned from asynchronous functions invoked by route
+                handlers and middleware, you must pass them to the next()
+                function, where Express will catch and process them. For
+                example:
+              </p>
+              <pre>
+                app.get('/', (req, res, next) => {
+                  fs.readFile('/file-does-not-exist', (err, data) => {
+                    if (err) {
+                      next(err) // Pass errors to Express.
+                    } else {
+                      res.send(data)
+                    }
+                  })
+                })
+              </pre>
+            </article>
+          </section>
+
+          <header id="Advanced-topics" class="title">Advanced topics</header>
+          <section>
+            <header id="Template-engines">Template engines</header>
+            <article>
+              <p>
+                Use the app.engine(ext, callback) method to create your own
+                template engine. ext refers to the file extension, and callback
+                is the template engine function, which accepts the following
+                items as parameters: the location of the file, the options
+                object, and the callback function.
+              </p>
+              <p>
+                The following code is an example of implementing a very simple
+                template engine for rendering .ntl files.
+              </p>
+              <pre>
+                const fs = require('fs') // this engine requires the fs module
+                app.engine('ntl', (filePath, options, callback) => { // define the template engine
+                  fs.readFile(filePath, (err, content) => {
+                    if (err) return callback(err)
+                    // this is an extremely simple template engine
+                    const rendered = content.toString()
+                      .replace('#title#', -title-${options.title}-/title-)
+                      .replace('#message#', h1${options.message}-/h1-'')
+                    return callback(null, rendered)
+                  })
+                })
+                app.set('views', './views') // specify the views directory
+                app.set('view engine', 'ntl') // register the template engine
+              </pre>
+            </article>
           </section>
           <section>
-            <header>Security best practices</header>
-            <article></article>
+            <header id="Process-managers">Process managers</header>
+            <article>
+              <p>
+                When you run Express apps for production, it is helpful to use a
+                process manager to:
+              </p>
+              <ul>
+                <li>Restart the app automatically if it crashes.</li>
+                <li>
+                  Gain insights into runtime performance and resource
+                  consumption.
+                </li>
+                <li>Modify settings dynamically to improve performance.</li>
+                <li>Control clustering.</li>
+              </ul>
+              <p>
+                A process manager is somewhat like an application server: it's a
+                “container” for applications that facilitates deployment,
+                provides high availability, and enables you to manage the
+                application at runtime.
+              </p>
+              <p>
+                The most popular process managers for Express and other Node.js
+                applications are:
+              </p>
+              <ul>
+                <li>
+                  Nodemon: Monitor for any changes in your source and
+                  automatically restart your server.
+                </li>
+                <li>
+                  PM2: A production process manager for Node.js applications
+                  that has a built-in load balancer. PM2 enables you to keep
+                  applications alive forever, reloads them without downtime,
+                  helps you to manage application logging, monitoring, and
+                  clustering.
+                </li>
+                <li>
+                  StrongLoop Process Manager (Strong-PM): A production process
+                  manager for Node.js applications with built-in load balancing,
+                  monitoring, and multi-host deployment. Includes a CLI to
+                  build, package, and deploy Node.js applications to a local or
+                  remote system.
+                </li>
+                <li>
+                  SystemD: The default process manager on modern Linux
+                  distributions, that makes it simple to run a Node application
+                  as a service. For more information, see “Run node.js service
+                  with systemd” by Ralph Slooten (@axllent).
+                </li>
+              </ul>
+            </article>
           </section>
           <section>
-            <header>Performance best practices</header>
-            <article></article>
+            <header id="Security-best-practices">
+              Security best practices
+            </header>
+            <article>
+              <p>
+                The term “production” refers to the stage in the software
+                lifecycle when an application or API is generally available to
+                its end-users or consumers. In contrast, in the “development”
+                stage, you're still actively writing and testing code, and the
+                application is not open to external access. The corresponding
+                system environments are known as production and development
+                environments, respectively.
+              </p>
+              <p>
+                Development and production environments are usually set up
+                differently and have vastly different requirements. What’s fine
+                in development may not be acceptable in production. For example,
+                in a development environment you may want verbose logging of
+                errors for debugging, while the same behavior can become a
+                security concern in a production environment. And in
+                development, you don't need to worry about scalability,
+                reliability, and performance, while those concerns become
+                critical in production.
+              </p>
+              <ul>
+                <li>Don't use deprecated or vulnerable versions of Express</li>
+                <li>Use TLS</li>
+                <li>Use Helmet</li>
+                <li>Use cookies securely</li>
+                <li>Prevent brute-force attacks against authorization</li>
+                <li>Ensure your dependencies are secure</li>
+                <li>Avoid other known vulnerabilities</li>
+                <li>Additional considerations</li>
+              </ul>
+            </article>
           </section>
-          <header class="title">Resources</header>
           <section>
-            <header>Glossary</header>
-            <article></article>
-          </section>
-          <section>
-            <header>Template Engines</header>
-            <article></article>
-          </section>
-          <section>
-            <header>Middleware</header>
-            <article></article>
-          </section>
-          <section>
-            <header>Utility modules</header>
-            <article></article>
-          </section>
-          <section>
-            <header>Frameworks</header>
-            <article></article>
+            <header id="Performance-best-practices">
+              Performance best practices
+            </header>
+            <article>
+              <p>
+                This article discusses performance and reliability best
+                practices for Express applications deployed to production.
+              </p>
+              <p>
+                This topic clearly falls into the “devops” world, spanning both
+                traditional development and operations. Accordingly, the
+                information is divided into two parts:
+              </p>
+              <ul>
+                <p>Things to do in your code (the dev part):</p>
+                <li>Use gzip compression</li>
+                <li>Don't use synchronous functions</li>
+                <li>Do logging correctly</li>
+                <li>Handle exceptions properly</li>
+              </ul>
+              <ul>
+                <p>Things to do in your environment / setup (the ops part):</p>
+                <li>Set NODE_ENV to “production”</li>
+                <li>Ensure your app automatically restarts</li>
+                <li>Run your app in a cluster</li>
+                <li>Cache request results</li>
+                <li>Use a load balancer</li>
+                <li>Use a reverse proxy</li>
+              </ul>
+            </article>
           </section>
         </main>
       </div>
     </div>
-
-    <footer></footer>
   </body>
 </html>
