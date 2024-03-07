@@ -9,35 +9,65 @@
   <body>
     <div class="grid-container">
       <div class="columns">
-        <nav>
-          <h3 id="#title"><a href="">Express</a></h3>
+        <nav id="navbar">
+          <header><a href="#title">Express</a></header>
           <h3><a href="#Getting-started">Getting started</a></h3>
           <ul>
-            <li><a href="#Installing">Installing</a></li>
-            <li><a href="#Hello-World">Hello World</a></li>
-            <li><a href="#Basic-routing">Basic routing</a></li>
+            <li><a class="nav-link" href="#installing">Installing</a></li>
+            <li><a class="nav-link" href="#hello_world">Hello World</a></li>
+            <li><a class="nav-link" href="#basic_routing">Basic routing</a></li>
           </ul>
 
           <h3><a href="#Guide">Guide</a></h3>
           <ul>
-            <li><a href="#Routing">Routing</a></li>
-            <li><a href="#Writing-middleware">Writing middleware</a></li>
+            <li><a class="nav-link" href="#routing">Routing</a></li>
             <li>
-              <a href="#Using-template-engines">Using template engines</a>
+              <a class="nav-link" href="#writing_middleware"
+                >Writing middleware</a
+              >
             </li>
-            <li><a href="#Error-handling">Error handling</a></li>
+            <li>
+              <a class="nav-link" href="#using_template_engines"
+                >Using template engines</a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="#error_handling">Error handling</a>
+            </li>
           </ul>
 
-          <h3><a href="#Advanced-topics">Advanced topics</a></h3>
+          <h3>
+            <a href="#Advanced-topics">Advanced topics</a>
+          </h3>
           <ul>
-            <li><a href="#Template-engines">Template engines</a></li>
-            <li><a href="#Process-managers">Process managers</a></li>
             <li>
-              <a href="#Security-best-practices">Security best practices</a>
+              <a class="nav-link" href="#template_engines">Template engines</a>
             </li>
             <li>
-              <a href="#Performance-best-practices"
+              <a class="nav-link" href="#process_managers">Process managers</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#security_best_practices"
+                >Security best practices</a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="#performance_best_practices"
                 >Performance best practices</a
+              >
+            </li>
+          </ul>
+
+          <h3><a href="#Api-reference">Api-reference</a></h3>
+          <ul>
+            <li><a class="nav-link" href="#5x_API">5x API</a></li>
+          </ul>
+
+          <h3><a href="#Resources">Resources</a></h3>
+          <ul>
+            <li>
+              <a class="nav-link" href="#expressjs_resources"
+                >Expressjs resources</a
               >
             </li>
           </ul>
@@ -68,10 +98,10 @@
           </div>
         </header>
 
-        <main>
+        <main id="main-doc">
           <header id="Getting-started" class="title">Getting started</header>
-          <section>
-            <header id="Installing">Installing</header>
+          <section class="main-section" id="installing">
+            <header id="Installing">installing</header>
             <article>
               <p>
                 Assuming you've already installed Node.js, create a directory to
@@ -109,8 +139,8 @@
               <code> $ npm install express --no-save </code>
             </article>
           </section>
-          <section>
-            <header id="Hello-World">Hello World</header>
+          <section class="main-section" id="hello_world">
+            <header id="Hello-World">hello world</header>
             <article>
               <pre>
                 const express = require('express')
@@ -134,8 +164,8 @@
               </p>
             </article>
           </section>
-          <section>
-            <header id="Basic-routing">Basic routing</header>
+          <section class="main-section" id="basic_routing">
+            <header id="Basic-routing">basic routing</header>
             <article>
               <p>
                 Routing refers to determining how an application responds to a
@@ -186,8 +216,8 @@
           </section>
 
           <header id="Guide" class="title">Guide</header>
-          <section>
-            <header id="Routing">Routing</header>
+          <section class="main-section" id="routing">
+            <header id="Routing">routing</header>
             <article>
               <p>
                 Routing refers to how an application's endpoints (URIs) respond
@@ -219,8 +249,8 @@
               </p>
             </article>
           </section>
-          <section>
-            <header id="Writing-middleware">Writing middleware</header>
+          <section class="main-section" id="writing_middleware">
+            <header id="Writing-middleware">writing middleware</header>
             <article>
               <p>
                 Middleware functions are functions that have access to the
@@ -245,8 +275,8 @@
               </p>
             </article>
           </section>
-          <section>
-            <header id="Using-template-engines">Using template engines</header>
+          <section class="main-section" id="using_template_engines">
+            <header id="Using-template-engines">using template engines</header>
             <article>
               <p>
                 A template engine enables you to use static template files in
@@ -262,8 +292,8 @@
               </p>
             </article>
           </section>
-          <section>
-            <header id="Error handling">Error handling</header>
+          <section class="main-section" id="error_handling">
+            <header id="Error-handling">error handling</header>
             <article>
               <p>
                 Errors that occur in synchronous code inside route handlers and
@@ -296,8 +326,8 @@
           </section>
 
           <header id="Advanced-topics" class="title">Advanced topics</header>
-          <section>
-            <header id="Template-engines">Template engines</header>
+          <section class="main-section" id="template_engines">
+            <header id="Template-engines">template engines</header>
             <article>
               <p>
                 Use the app.engine(ext, callback) method to create your own
@@ -327,8 +357,8 @@
               </pre>
             </article>
           </section>
-          <section>
-            <header id="Process-managers">Process managers</header>
+          <section class="main-section" id="process_managers">
+            <header id="Process-managers">process managers</header>
             <article>
               <p>
                 When you run Express apps for production, it is helpful to use a
@@ -381,9 +411,9 @@
               </ul>
             </article>
           </section>
-          <section>
+          <section class="main-section" id="security_best_practices">
             <header id="Security-best-practices">
-              Security best practices
+              security best practices
             </header>
             <article>
               <p>
@@ -418,9 +448,9 @@
               </ul>
             </article>
           </section>
-          <section>
+          <section class="main-section" id="performance_best_practices">
             <header id="Performance-best-practices">
-              Performance best practices
+              performance best practices
             </header>
             <article>
               <p>
@@ -447,6 +477,99 @@
                 <li>Cache request results</li>
                 <li>Use a load balancer</li>
                 <li>Use a reverse proxy</li>
+              </ul>
+            </article>
+          </section>
+
+          <header id="Api-reference" class="title">Api-reference</header>
+          <section class="main-section" id="5x_API">
+            <header id="5.x-API">5x API</header>
+            <article>
+              <ul>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://expressjs.com/en/5x/api.html#express"
+                    >Express()</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://expressjs.com/en/5x/api.html#app"
+                    >Application</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://expressjs.com/en/5x/api.html#req"
+                    >Request</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://expressjs.com/en/5x/api.html#res"
+                    >Response</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://expressjs.com/en/5x/api.html#router"
+                    >Router</a
+                  >
+                </li>
+              </ul>
+            </article>
+          </section>
+
+          <header id="Resources" class="title">Resources</header>
+          <section class="main-section" id="expressjs_resources">
+            <header id="Expressjs-resources">expressjs resources</header>
+            <article>
+              <ul>
+                <li>
+                  <a
+                    href="https://expressjs.com/en/resources/glossary.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Glossary</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://expressjs.com/en/resources/template-engines.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Template Engines</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://expressjs.com/en/resources/middleware.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Middleware</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://expressjs.com/en/resources/frameworks.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Frameworks</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://expressjs.com/en/resources/learning.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Additional learning</a
+                  >
+                </li>
               </ul>
             </article>
           </section>
