@@ -1,10 +1,21 @@
+:root {
+  --section-color: #ffffff;
+  --span-color: #008c00;
+}
+
 body {
   margin: 0;
   padding: 0;
+  background-color: #efefef;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
   box-sizing: border-box;
+  font-family: "Open Sans", "Arial";
 }
 
 /*header*/
@@ -14,19 +25,23 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: black;
   color: white;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  background-image: url("./images/SKYLINE.jpg");
+  background-size: cover;
 }
 
 .navlist {
-  height: 200px;
+  position: sticky;
+  top: 0;
+  height: 210px;
 }
 
 .navlist:nth-of-type(1) {
   display: flex;
   align-items: center;
-  width: 60%;
+  width: 50%;
+  font-size: 25px;
 }
 
 .navlist:nth-of-type(2) {
@@ -36,14 +51,14 @@ body {
 
 .navlist:nth-of-type(2) > ul {
   display: flex;
-
   list-style: none;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .navlist:nth-of-type(2) ul li {
   padding: 10px;
+  font-size: 25px;
 }
 
 .logo {
@@ -57,31 +72,33 @@ body {
   margin: 0 auto;
 }
 
-.short_section {
+.sm_section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   gap: 1px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: var(--section-color);
 }
 
-.short_section > div {
+.sm_section > div {
   margin: 5px;
   margin-bottom: 25px;
 }
 
-.short_section > div > img {
+.sm_section > div > img {
   width: 100%;
   height: auto;
 }
 
-.long_section > figure > img {
-  width: 70%;
-  text-align: center;
-  margin: 0 auto;
+.sm_section:nth-of-type(3) > div:nth-of-type(3) {
+  grid-column: 1/-1;
+  font-weight: bold;
 }
 
 span {
-  color: orange;
+  color: var(--span-color);
 }
 
 p {
@@ -95,4 +112,45 @@ figure {
 
 figcaption {
   text-align: justify;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  font-size: 28px;
+}
+
+.exp_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ul_container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  list-style: none;
+}
+
+.ul_container > li {
+  padding: 20px;
+  background-color: rgba(00, 0, 0, 0.03);
+  border: 1px, solid;
+  text-align: center;
+}
+
+.ul_container > li:hover {
+  font-weight: bold;
+  background-color: var(--section-color);
+}
+
+section > header {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 30px 0;
+  text-align: center;
 }
