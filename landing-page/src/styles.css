@@ -20,7 +20,7 @@ html {
 
 /*header*/
 
-#navbar {
+#nav-bar {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -153,4 +153,119 @@ section > header {
   font-weight: bold;
   margin: 30px 0;
   text-align: center;
+}
+
+.form-section {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: var(--section-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-section > div > header {
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+form > label {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+input[type="Email"] {
+  width: 25%;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+input[type="Email"]:hover {
+  border: 3px solid #ccc;
+}
+
+input[type="submit"] {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: var(--span-color);
+  color: var(--section-color);
+  font-size: 20px;
+  border-radius: 8px;
+  width: 15%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/SKYLINE.jpg");
+  background-size: cover;
+  padding: 20px;
+}
+footer > div {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 30px;
+}
+i {
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 900px) {
+  .navlist:nth-of-type(1) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 25px;
+  }
+
+  .logo {
+    width: 25%;
+  }
+
+  .navlist:nth-of-type(2) {
+    display: none;
+  }
+  .sm_section {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 1px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: var(--section-color);
+  }
+
+  #video {
+    width: 400px;
+  }
+
+  .ul_container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    list-style: none;
+  }
+
+  input[type="Email"] {
+    width: 80%;
+    border: 1px solid #ccc;
+    font-size: 15px;
+  }
+  input[type="submit"] {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: var(--span-color);
+    color: var(--section-color);
+    font-size: 20px;
+    border-radius: 8px;
+    width: 40%;
+  }
 }
